@@ -4,19 +4,7 @@ pub mod routeguide {
     tonic::include_proto!("routeguide");
 }
 
-struct MyHttpServer;
-
-wasi::http::proxy::export!(MyHttpServer);
-
-impl wasi::exports::http::incoming_handler::Guest for MyHttpServer {
-    fn handle(request: wasi::exports::http::incoming_handler::IncomingRequest, response_out: wasi::exports::http::incoming_handler::ResponseOutparam) {
-        let registry = wasi_hyperium::poll::Poller::default();
-        let server = RouteGuideServer::new(Svc);
-        let e = wasi_hyperium::hyperium1::handle_service_call(server, request, response_out, registry);
-        e.unwrap();
-    }
-}
-
+#[wasi_grpc_server::grpc_component(RouteGuideServer)]
 struct Svc;
 
 #[tonic::async_trait]

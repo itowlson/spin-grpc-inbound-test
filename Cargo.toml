@@ -13,6 +13,7 @@ crate-type = ["cdylib"]
 anyhow = "1"
 prost = "0.13.5"
 wasi-grpc = "0.1.0"
+wasi-grpc-server = { path = "crates/wasi-grpc-server" }
 spin-sdk =  "5.0.0"
 tonic = { version = "0.13.1", features = ["codegen", "prost", "router"], default-features = false}
 wasi-hyperium = "0.3.0"
@@ -25,3 +26,4 @@ async-stream = "0.3.6"
 tonic-build = { version = "0.13.1", features = ["prost"] }
 
 [workspace]
+members = ["crates/wasi-grpc-server"]

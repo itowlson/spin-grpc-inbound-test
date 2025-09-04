@@ -17,10 +17,8 @@ spin-sdk =  "5.0.0"
 tonic = { version = "0.13.1", features = ["codegen", "prost", "router"], default-features = false}
 wasi-hyperium = "0.3.0"
 wasi = "=0.13.1"
-# tokio-stream = "0.1.17"
 spin-executor = "5.0.0"
 futures = "0.3.31"
-pin-project = "1.1.10"
 async-stream = "0.3.6"
 
 [build-dependencies]

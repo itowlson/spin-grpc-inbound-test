@@ -448,7 +448,6 @@ dependencies = [
  "anyhow",
  "async-stream",
  "futures",
- "pin-project",
  "prost",
  "spin-executor 5.0.0",
  "spin-sdk",

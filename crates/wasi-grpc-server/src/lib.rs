@@ -3,7 +3,7 @@ use quote::{format_ident, quote};
 
 #[proc_macro_attribute]
 pub fn grpc_component(attr: TokenStream, item: TokenStream) -> TokenStream {
-    let svr_ty = syn::parse_macro_input!(attr as syn::Ident);
+    let svr_ty = syn::parse_macro_input!(attr as syn::Path);
     let st = syn::parse_macro_input!(item as syn::ItemStruct);
     let st_name = &st.ident;
     let wasi_implementor = format_ident!("{}GrpcServer", st_name);
